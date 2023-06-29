@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+    <script>
+      function mostrarTexto() {
+        var cardNumber = document.getElementById("card-number").value;
+        var input = document.getElementById("name").value;
+        document.getElementById("name-t").textContent = input;
+        document.getElementById("card-number-t").textContent = cardNumber;
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="card">
+          <div class="izq">
+            <article class="tarjeta">
+              <img src="./images/card-logo.svg" class="logo" />
+              <div class="info-tarjeta">
+                <div class="card-number" id="card-number-t"></div>
+                <span class="name" id="name-t"></span>
+                <span class="date" style="float: right">00/00</span>
+              </div>
+            </article>
+            <article class="tarjeta2">
+              <div class="info-tarjeta">
+                <div class="cvc">000</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="der">
+            <form>
+              <label for="name">Cardholder Name</label>
+              <div>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="e.g. Jane Appleseed"
+                  onkeypress="mostrarTexto()"
+                />
+              </div>
+
+              <label for="card-number">Card Number</label>
+              <div>
+                <input
+                  type="text"
+                  id="card-number"
+                  placeholder="e.g. 1234 5678 9123 0000"
+                />
+              </div>
+              <label class="imput-container" for="mm">Exp. Date (MM/YY)</label>
+              <label for="cvc">CVC</label>
+              <div>
+                <input type="text" id="mm" placeholder="MM" size="3" />
+                <input type="text" id="yy" placeholder="YY" size="3" />
+                <input type="text" id="cvc" placeholder="e.g. 123" size="11" />
+              </div>
+              <button>Confirm</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+<!-- <img src="./images/bg-main-desktop.png" alt="">
+<img src="./images/bg-main-mobile.png" alt=""> -->
+<!--<img src="./images/icon-complete.svg" alt="">-->
